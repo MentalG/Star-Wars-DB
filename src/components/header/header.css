@@ -1,13 +1,23 @@
 .header {
     display: flex;
-    
-    margin: 20px;
+    align-items: baseline;
+    width: 70%;
+    margin: 30px auto;
+}
+
+.logo {
+    margin-right: 3%;
 }
 
 .navbar {
     list-style: none;
+    display: flex;
+    width: 350px;
+    justify-items: baseline;
 }
 
 .navbar li {
-    margin-right: 10px;
+    margin-right: 3%;
+    font-size: 20px;
+    color: teal;
 }
