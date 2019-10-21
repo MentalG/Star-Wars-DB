@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    
+    margin: 20px;
+}
+
+.navbar {
+    list-style: none;
+}
+
+.navbar li {
+    margin-right: 10px;
+}
