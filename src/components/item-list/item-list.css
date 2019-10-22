@@ -1,0 +1,22 @@
+.characters-list {
+  width: 46%;
+  padding: 0px;
+  list-style: none;
+  margin-bottom: 0rem;
+}
+
+.characters-list li {
+  padding: 20px;
+  background-color: #313131;
+  border: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgb(82, 82, 82);
+}
+
+.characters-list li:first-child {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.characters-list li:last-child {
+  border-radius: 0px 0px 5px 5px;
+}

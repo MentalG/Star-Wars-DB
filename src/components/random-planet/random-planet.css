@@ -1,0 +1,22 @@
+.random-planet-container {
+  display: flex;
+  background-color: #313131;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.planet-name {
+    margin-bottom: 30px;
+}
+
+.description-list {
+    list-style: none;
+}
+
+.description-list li{
+    padding: 10px;
+    border: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgb(82, 82, 82); 
+}
