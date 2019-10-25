@@ -1,40 +1,55 @@
 .random-planet-container {
   display: flex;
+  justify-content: space-between;
   background-color: #313131;
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 50px;
 }
 
+.planet-container {
+  display: flex;
+}
+
 .planet-name {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.planet-img {
+  width: 35%;
+  border-radius: 5px;
+  margin-right: 20px;
 }
 
 .description-list {
-    list-style: none;
+  list-style: none;
 }
 
-.description-list li{
-    padding: 10px;
-    border: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: rgb(82, 82, 82); 
+.description-list li {
+  padding: 10px;
+  border: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: rgb(82, 82, 82);
 }
 
-.term{
-    margin-right: 5px;
+.term {
+  margin-right: 5px;
 }
 
-.planet-img-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width: 300px;
-    margin-right: 50px;
+.planet-img-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+  margin-right: 50px;
 }
 
-.random-planet-img{
-    width: 100%;
-    border-radius: 5px;
+.random-planet-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.planet-description-container {
+  width: 65%;
 }
