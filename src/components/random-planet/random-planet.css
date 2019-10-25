@@ -20,3 +20,21 @@
     border-width: 1px 0px 0px 0px;
     border-color: rgb(82, 82, 82); 
 }
+
+.term{
+    margin-right: 5px;
+}
+
+.planet-img-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 300px;
+    margin-right: 50px;
+}
+
+.random-planet-img{
+    width: 100%;
+    border-radius: 5px;
+}
