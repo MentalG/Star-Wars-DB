@@ -8,25 +8,40 @@
   border: solid;
   border-width: 1px 1px 1px 1px;
   border-color: rgb(82, 82, 82);
+  align-items: center;
+  justify-content: space-around;
 }
 
 .person-details-container img {
-    width: 200px;
-    margin-right: 20px;
-  }
+  width: 200px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
 
 .person-name {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .description-person-list {
-    list-style: none;
+  list-style: none;
 }
 
-.description-person-list li{
-    padding: 10px;
-    width: 90%;
-    border: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: rgb(82, 82, 82); 
+.description-person-list li {
+  padding: 10px;
+  width: 90%;
+  border: solid;
+  border-width: 1px 0px 0px 0px;
+  border-color: rgb(82, 82, 82);
+}
+
+.select-person {
+  text-align: center;
+  width: 46%;
+  padding: 20px;
+  background-color: #313131;
+  height: fit-content;
+  border-radius: 5px;
+  border: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgb(82, 82, 82);
 }

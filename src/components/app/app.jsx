@@ -13,7 +13,7 @@ import PersonDetails from '../person-details/person-details';
 export default class App extends Component {
 
   state = {
-    seletedPerson: 1
+    seletedPerson: null
   }
 
   onPersonSelected = (id) => {

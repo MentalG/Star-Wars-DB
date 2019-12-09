@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+//components
+import Spinner from '../spinner/spinner';
+
 //css 
 import './person-details.css'
 
@@ -11,20 +14,22 @@ export default class PersonDetails extends Component {
     swapiService = new SwapiService()
 
     state = {
-        person: null
+        person: null,
+        loading: false,
     }
 
-    componentDidMount() {
+    componentDidMount () {
         this.updatePerson()
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate (prevProps) {
         if (this.props.personId !== prevProps.personId) {
+            this.setState({ loading: true })
             this.updatePerson()
         }
     }
 
-    updatePerson() {
+    updatePerson () {
         const { personId } = this.props
 
         if (!personId) {
@@ -32,36 +37,53 @@ export default class PersonDetails extends Component {
         }
 
         this.swapiService
-        .getPerson(personId)
-        .then((person) => {
-            this.setState({ person })
-        })
+            .getPerson(personId)
+            .then((person) => {
+                this.setState({ person, loading: false })
+            })
     }
 
     render () {
-        const { person } = this.state 
-
-        if (!person) {
-            return <span>Select a person from a list</span>
-        }
-
-        const { id, name, gender,
-                birthYear, eyeColor } = person
+        const { person, loading } = this.state
+        const content = (person && !loading) ? <PersonDetailsContainer person={person} /> : null
+        const spinner = loading ? <Spinner /> : null
+        const tip = person === null ? <SelectPerson /> : null
 
         return (
             <div className='person-details-container'>
-                <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt={name}/>
-                <div className='person-details-description'>
-                    <h1 className='person-name'>{name}</h1>
-                    <div className='person-description'>
-                        <ul className='description-person-list'>
-                            <li>Gender: {gender}</li>
-                            <li>Birthday Year: {birthYear}</li>
-                            <li>EyeColor: {eyeColor}</li>
-                        </ul>
-                    </div>
-                </div>
+                {tip}
+                {spinner}
+                {content}
             </div>
         )
     }
+}
+
+const SelectPerson = () => {
+    return (
+        <React.Fragment>
+            <span className='select-person'>Select a person from a list</span>
+        </React.Fragment>
+    )
+}
+
+const PersonDetailsContainer = (person) => {
+    const { id, name, gender,
+        birthYear, eyeColor } = person.person
+
+    return (
+        <React.Fragment>
+            <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt={name} />
+            <div className='person-details-description'>
+                <h1 className='person-name'>{name}</h1>
+                <div className='person-description'>
+                    <ul className='description-person-list'>
+                        <li>Gender: {gender}</li>
+                        <li>Birthday Year: {birthYear}</li>
+                        <li>EyeColor: {eyeColor}</li>
+                    </ul>
+                </div>
+            </div>
+        </React.Fragment>
+    )
 }
