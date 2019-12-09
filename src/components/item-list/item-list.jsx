@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 //css 
 import './item-list.css'
@@ -13,7 +13,7 @@ export default class ItemList extends Component {
         peopleList: null
     }
 
-    componentDidMount() {
+    componentDidMount () {
         this.swapiService
             .getAllPeople()
             .then((peopleList) => {
@@ -23,13 +23,13 @@ export default class ItemList extends Component {
             })
     }
 
-    renderItems(arr) {
-        return arr.map(({id, name}) => {
+    renderItems (arr) {
+        return arr.map(({ id, name }) => {
             return (
                 <li key={id}
-                onClick={() => this.props.onItemSelected(id)}>
-                {name}
-                </li> 
+                    onClick={() => this.props.onItemSelected(id)}>
+                    {name}
+                </li>
             )
         })
     }
@@ -42,10 +42,10 @@ export default class ItemList extends Component {
         }
 
         const items = this.renderItems(peopleList)
-        
-        return(
+
+        return (
             <ul className='characters-list'>
-               {items}
+                {items}
             </ul>
         )
     }

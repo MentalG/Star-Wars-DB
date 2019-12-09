@@ -1,12 +1,19 @@
 .person-details-container {
   width: 46%;
   height: 300px;
+  display: flex;
+  padding: 20px;
   background-color: #313131;
   border-radius: 5px;
   border: solid;
   border-width: 1px 1px 1px 1px;
   border-color: rgb(82, 82, 82);
 }
+
+.person-details-container img {
+    width: 200px;
+    margin-right: 20px;
+  }
 
 .person-name {
     margin-bottom: 30px;
