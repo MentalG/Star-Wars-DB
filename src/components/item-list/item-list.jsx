@@ -23,6 +23,17 @@ export default class ItemList extends Component {
             })
     }
 
+    renderItems(arr) {
+        return arr.map(({id, name}) => {
+            return (
+                <li key={id}
+                onClick={() => this.props.onItemSelected(id)}>
+                {name}
+                </li> 
+            )
+        })
+    }
+
     render () {
         const { peopleList } = this.state
 
@@ -30,13 +41,11 @@ export default class ItemList extends Component {
             return <Spinner />
         }
 
+        const items = this.renderItems(peopleList)
+        
         return(
             <ul className='characters-list'>
-               <li>Luke Skywalker (19BBY)</li> 
-               <li>C-3PO (112BBY)</li> 
-               <li>R2-D2 (33BBY)</li> 
-               <li>Darth Vader (41.9BBY)</li> 
-               <li>Leia Organd(19BBY)</li> 
+               {items}
             </ul>
         )
     }

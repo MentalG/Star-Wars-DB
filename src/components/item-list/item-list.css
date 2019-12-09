@@ -13,6 +13,11 @@
   border-color: rgb(82, 82, 82);
 }
 
+.characters-list li:hover {
+  background-color: rgb(84, 84, 84);
+  cursor: pointer;
+}
+
 .characters-list li:first-child {
   border-radius: 5px 5px 0px 0px;
 }

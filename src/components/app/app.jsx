@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 //css
 import './app.css'
@@ -10,17 +10,28 @@ import ItemList from '../item-list/item-list';
 import PersonDetails from '../person-details/person-details';
 
 
-function App () {
-   return (
-    <div className="app">
-      <Header />
-      <RandomPlanet />
-      <div className='character-info-conrainer'>
-        <ItemList />
-        <PersonDetails />
-      </div>
-    </div>
-  );
-}
+export default class App extends Component {
 
-export default App;
+  state = {
+    seletedPerson: null
+  }
+
+  onPersonSelected = (id) => {
+    this.setState({
+      seletedPerson: id
+    })
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Header />
+        <RandomPlanet />
+        <div className='character-info-conrainer'>
+          <ItemList onItemSelected={this.onPersonSelected}/>
+          <PersonDetails />
+        </div>
+      </div>
+    )
+  }
+}
