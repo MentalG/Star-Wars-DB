@@ -75,7 +75,7 @@ const PersonDetailsContainer = (person) => {
         <React.Fragment>
             <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt={name} />
             <div className='person-details-description'>
-                <h3 className='person-name'>{name}</h3>
+                <h4 className='person-name'>{name}</h4>
                 <div className='person-description'>
                     <ul className='description-person-list'>
                         <li>Gender: {gender}</li>

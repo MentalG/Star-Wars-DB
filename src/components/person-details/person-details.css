@@ -13,13 +13,13 @@
 }
 
 .person-details-container img {
-  width: 200px;
+  width: 190px;
   margin-right: 20px;
   border-radius: 5px;
 }
 
 .person-name {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .description-person-list {
@@ -46,3 +46,7 @@
   border-color: rgb(82, 82, 82);
 }
 
+.description-person-list {
+  margin: 0;
+  padding: 0;
+}
