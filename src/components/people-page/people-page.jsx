@@ -4,11 +4,15 @@ import React, { Component } from 'react'
 import ItemList from '../item-list/item-list'
 import PersonDetails from '../person-details/person-details'
 
+//services
+import SwapiService from '../../services/swapi-service'
+
 //css
 import './people-page.css'
 
-
 export default class PeoplePage extends Component {
+
+    swapiService = new SwapiService()
 
     state = {
         seletedPerson: null
@@ -21,7 +25,9 @@ export default class PeoplePage extends Component {
     render() {
         return (
             <div className='character-info-conrainer'>
-            <ItemList onItemSelected={this.onPersonSelected} />
+            <ItemList 
+            onItemSelected={this.onPersonSelected}
+            getData={this.swapiService.getAllPeople} />
             <PersonDetails personId={this.state.seletedPerson} />
           </div>
         )
