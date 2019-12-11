@@ -27,7 +27,8 @@ export default class PeoplePage extends Component {
             <div className='character-info-conrainer'>
             <ItemList 
             onItemSelected={this.onPersonSelected}
-            getData={this.swapiService.getAllPeople} />
+            getData={this.swapiService.getAllPeople} 
+            renderItem={(item) => item.name}/>
             <PersonDetails personId={this.state.seletedPerson} />
           </div>
         )

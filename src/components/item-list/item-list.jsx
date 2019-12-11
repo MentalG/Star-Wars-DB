@@ -17,6 +17,7 @@ export default class ItemList extends Component {
 
         getData()
             .then((itemList) => {
+                console.log(itemList);
                 this.setState({
                     itemList
                 })
@@ -24,11 +25,14 @@ export default class ItemList extends Component {
     }
 
     renderItems (arr) {
-        return arr.map(({ id, name }) => {
+        return arr.map(( item ) => {
+            const { id, name } = item
+            const label = this.props.renderItem(item)
+            
             return (
                 <li key={id}
                     onClick={() => this.props.onItemSelected(id)}>
-                    {name}
+                    {label}
                 </li>
             )
         })
@@ -43,10 +47,6 @@ export default class ItemList extends Component {
 
         const items = this.renderItems(itemList)
 
-        return (
-            <ul className='characters-list'>
-                {items}
-            </ul>
-        )
+        return <ul className='characters-list'>{items}</ul> 
     }
 }

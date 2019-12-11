@@ -17,10 +17,6 @@ export default class App extends Component {
 
   swapiService = new SwapiService()
 
-  state = {
-
-  }
-
   render () {
     return (
       <div className="app">
@@ -31,8 +27,9 @@ export default class App extends Component {
         <div className='character-info-conrainer'>
           <ItemList
             onItemSelected={this.onPersonSelected}
-            getData={this.swapiService.getAllPlanets} />
-          <PersonDetails personId={this.state.seletedPerson} />
+            getData={this.swapiService.getAllPlanets} 
+            renderItem={(item) => item.name}/>
+          {/* <PersonDetails personId={this.state.seletedPerson} /> */}
         </div>
 
       </div>
